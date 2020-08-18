@@ -1,6 +1,9 @@
 import React from 'react';
 
 const FriendCard = props => {
+
+    const { name, email, age } = props;
+
     return(
         <div>
             <h3>{name}</h3>
