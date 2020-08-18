@@ -10,7 +10,7 @@ const Login = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axiosWithAuth().post('/login', initialLogin)
+        axiosWithAuth().post('/api/login', initialLogin)
             .then(res => {
                 console.log(res)
             })
