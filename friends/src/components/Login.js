@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth'
 
 const Login = props => {
 
@@ -9,7 +10,13 @@ const Login = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // axios post request goes here
+        axiosWithAuth().post('/login', initialLogin)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     
     const handleChange = (e) => {
