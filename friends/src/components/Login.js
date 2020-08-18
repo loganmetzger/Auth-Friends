@@ -4,7 +4,7 @@ import axiosWithAuth from '../utils/axiosWithAuth'
 const Login = props => {
 
     const [initialLogin, setInitialLogin] = useState({
-        email: '',
+        username: '',
         password: '',
     });
 
@@ -12,7 +12,7 @@ const Login = props => {
         e.preventDefault()
         axiosWithAuth().post('/api/login', initialLogin)
             .then(res => {
-                console.log(res)
+                console.log(res.data.payload)
             })
             .catch(err => {
                 console.log(err)
@@ -29,10 +29,10 @@ const Login = props => {
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
-                    name="email"
-                    value={props.email}
+                    name="username"
+                    value={props.username}
                     onChange={handleChange}
-                    placeholder="Email"
+                    placeholder="Username"
                 />
                 <br />
                 <input 
