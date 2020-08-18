@@ -12,7 +12,8 @@ const Login = props => {
         e.preventDefault()
         axiosWithAuth().post('/api/login', initialLogin)
             .then(res => {
-                console.log(res.data.payload)
+                localStorage.setItem('token', res.data.payload)
+                // props.history.push('/protected')
             })
             .catch(err => {
                 console.log(err)

@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Friends = props => {
+import axiosWithAuth from '../utils/axiosWithAuth'
+
+const Friends = (props) => {
+
+    const [friends, setFriends] = useState([])
+
+    const getFriends = () => {
+        axiosWithAuth()
+            .get('/api/friends')
+            .then(res => {
+                setFriends(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getFriends()
+    }, [])
+
     return(
         <div>
-            {/* map over friends to create friend card */}
+            <h1>something</h1>
         </div>
     )
 }
