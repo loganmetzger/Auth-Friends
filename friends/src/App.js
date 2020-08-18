@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import Login from './components/Login'
+import Friends from './components/Friends'
 
 function App() {
   const [initialLogin, setInitialLogin] = useState({
@@ -9,6 +11,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // axios post request goes here
   }
 
   const handleChange = (e) => {
@@ -22,6 +25,7 @@ function App() {
         handleSubmit={handleSubmit}
         initialLogin={initialLogin}
       />
+      <Friends />
     </div>
   );
 }

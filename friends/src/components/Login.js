@@ -16,7 +16,7 @@ const Login = props => {
                 />
                 <br />
                 <input 
-                    type="text" 
+                    type="password" 
                     name="password"
                     value={props.password}
                     onChange={handleChange}
